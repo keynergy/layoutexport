@@ -34,7 +34,9 @@ fn main() {
 
     let mut file = File::create(layout.name.replace(" ", "_").to_ascii_lowercase()).unwrap();
     match write!(file, "{}", xkb_layout.content) {
-	Err(_) => panic!("Could not write the resulting file. Check permissions for this directory."),
-	_ => 0
+        Err(_) => {
+            panic!("Could not write the resulting file. Check permissions for this directory.")
+        }
+        _ => 0,
     };
 }
