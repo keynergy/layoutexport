@@ -88,8 +88,9 @@ dependencies = [
 
 [[package]]
 name = "keynergy"
-version = "0.1.0"
-source = "git+https://github.com/keynergy/keynergy-lib#bc4218c5487351090cc490e252347755be820cfe"
+version = "0.2.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e8fd11278583883d0da7036b6c0a5710006e95d632a29fcda2cadccf67ebe0e3"
 dependencies = [
  "serde",
  "toml",
