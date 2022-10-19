@@ -58,9 +58,16 @@ xkb_symbols \"basic\" {{
 
 fn create_xkb_keys(homerow: u8, m: &Vec<Vec<char>>) -> String {
     let mut keys: Vec<String> = Vec::new();
+    let first_row = match m.len() {
+    	1 => 2,
+    	2 => 1,
+    	3 => 1,
+    	4 => 0,
+    	_ => panic!("can't handle this row count")
+    };
     for (y, row) in m.iter().enumerate() {
         for (x, k) in row.iter().enumerate() {
-            let row_sign = ["AE", "AD", "AC", "AB"][y + homerow as usize];
+            let row_sign = ["AE", "AD", "AC", "AB"][first_row+y];
             let key = match *k {
                 ';' => "semicolon".to_string(),
                 '\'' => "apostrophe".to_string(),
