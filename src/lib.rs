@@ -76,6 +76,7 @@ fn create_xkb_keys(homerow: u8, m: &Vec<Vec<char>>) -> String {
                 '/' => "slash".to_string(),
                 '[' => "bracketleft".to_string(),
                 ']' => "bracketright".to_string(),
+                '-' => "minus".to_string(),
                 _ => k.to_string(),
             };
             let uppercase = match *k {
@@ -86,6 +87,7 @@ fn create_xkb_keys(homerow: u8, m: &Vec<Vec<char>>) -> String {
                 '/' => "question".to_string(),
                 '[' => "braceleft".to_string(),
                 ']' => "braceright".to_string(),
+                '-' => "underscore".to_string(),
                 _ => k.to_ascii_uppercase().to_string(),
             };
             keys.push(format!(
